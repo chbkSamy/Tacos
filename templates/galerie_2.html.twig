@@ -10,11 +10,11 @@
 
         <div class="row">
             {% set images = [
-                { 'url': '', 'nom': 'Tacos M' },
-                { 'url': '', 'nom': 'TAcos L' },
-                { 'url': '', 'nom': 'Tacos XL' },
-                { 'url': '', 'nom': 'Le Klassic' },
-                { 'url': '', 'nom': 'Forceaoit' },
+                { 'url': '', 'nom': 'Tacos M', 'description': 'Tacos une viande au choix, accompagné de sa sauce au choix.' },
+                { 'url': '', 'nom': 'Tacos L', 'description': 'Tacos deux viandes au choix, accompagné de sa sauce au choix.' },
+                { 'url': '', 'nom': 'Tacos XL', 'description': 'Description personnalisée pour Tacos XL.' },
+                { 'url': '', 'nom': 'Le Klassic', 'description': 'Description personnalisée pour Le Klassic.' },
+                { 'url': '', 'nom': 'Forceaoit', 'description': 'Description personnalisée pour Forceaoit.' },
             ] %}
 
             {% for image in images %}
@@ -23,7 +23,7 @@
                         <img src="{{ image.url }}" class="card-img-top" alt="{{ image.nom }}">
                         <div class="card-body">
                             <h5 class="card-title">{{ image.nom }}</h5>
-                            <p class="card-text">Description de l'image {{ loop.index }}.</p>
+                            <p class="card-text">{{ image.description }}</p>
                         </div>
                     </div>
                 </div>
@@ -31,4 +31,3 @@
         </div>
     </section>
 {% endblock %}
-
