@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Galerie</h1>
+                <p class="lead text-body-secondary">Découvrez notre collection d'images.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for i in 1..5 %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="{{ 'https://imgs.search.brave.com/STaqudqgOVsB9tom-oXuergTMjsMitFmgx1rKroqb00/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3NBOEFB/T1N3TGNkaGhxeFYv/cy1sNTAwLmpwZw' }}" class="card-img-top" alt="Anjoliveur 206 TDI">
+                        <div class="card-body">
+                            <h5 class="card-title">Anjoliveur 206 TDI</h5>
+                            <p class="card-text">Description de l'image {{ i }}.</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
