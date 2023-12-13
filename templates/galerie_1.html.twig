@@ -9,13 +9,21 @@
         </div>
 
         <div class="row">
-            {% for i in 1..5 %}
+            {% set images = [
+                { 'url': 'https://imgs.search.brave.com/STaqudqgOVsB9tom-oXuergTMjsMitFmgx1rKroqb00/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3NBOEFB/T1N3TGNkaGhxeFYv/cy1sNTAwLmpwZw', 'nom': 'Anjoliveur 206 TDI' },
+                { 'url': 'https://imgs.search.brave.com/6IWgX4sfbHtb3D56I7aw2HhkeQ7OUSV_bIAYLRdzMAY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9jb3Jh/aWxtYXJrZXQuY29t/LzI0OTcyLWhvbWVf/ZGVmYXUvdC1iMmV1/LWJlNzUtMDA5MC5n/cGc', 'nom': 'Cachir' },
+                { 'url': 'https://imgs.search.brave.com/ZvSx3DMzJ1aHWDC7Jcu42kiEgPLF5WymATEmHETryjY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAyLzI3LzQyLzc2/LzM2MF9GXzIyNzQy/NzY3NV91cXFOdGhy/ZTVwa1F2MDFsRmc1/Sk80Z2N5bElnY3RO/TS5qcGc', 'nom': 'Sushi' },
+                { 'url': 'https://imgs.search.brave.com/FSntJCCV1UOV6hL7xCHcCGVm12CEpYuoNbBKnhJtFhQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5zaHV0dGVyc3Rv/Y2suY29tL21vc2Fp/Y18yNTAvMTc5MzIx/MTg2Lzc1OTcwODAy/OC9zdG9jay1waG90/by1pbmRpYW4tcGFu/Z29saW4tYmFieS03/NTk3MDgwMjguanBn', 'nom': 'Pangolin' },
+                { 'url': 'https://www.boxing-shop.com/media/cache/default_product_large/media/porduits/1442413751.jpg', 'nom': 'Gant de boxe' }
+            ] %}
+
+            {% for image in images %}
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
-                        <img src="{{ 'https://imgs.search.brave.com/STaqudqgOVsB9tom-oXuergTMjsMitFmgx1rKroqb00/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3NBOEFB/T1N3TGNkaGhxeFYv/cy1sNTAwLmpwZw' }}" class="card-img-top" alt="Anjoliveur 206 TDI">
+                        <img src="{{ image.url }}" class="card-img-top" alt="{{ image.nom }}">
                         <div class="card-body">
-                            <h5 class="card-title">Anjoliveur 206 TDI</h5>
-                            <p class="card-text">Description de l'image {{ i }}.</p>
+                            <h5 class="card-title">{{ image.nom }}</h5>
+                            <p class="card-text">Description de l'image {{ loop.index }}.</p>
                         </div>
                     </div>
                 </div>
@@ -23,3 +31,4 @@
         </div>
     </section>
 {% endblock %}
+
