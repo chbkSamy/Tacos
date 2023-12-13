@@ -30,4 +30,24 @@ class DefaultController extends AbstractController
     {
         return $this->render('galerie_1.html.twig');
     }
+    #[Route('/Tacos', name: 'app_tacos')]
+    public function tacos(): Response
+    {
+        return $this->render('galerie_2.html.twig');
+    }
+    #[Route('/sauce', name: 'app_sauce')]
+    public function sauce(): Response
+    {
+        return $this->render('galerie_3.html.twig');
+    }
+    #[Route('/boisson', name: 'app_boisson')]
+    public function boisson(): Response
+    {
+        return $this->render('galerie_4.html.twig');
+    }
+    #[Route('/desert', name: 'app_dessert')]
+    public function dessert(): Response
+    {
+        return $this->render('galerie_5.html.twig');
+    }
 }

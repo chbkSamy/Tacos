@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Tacos</h1>
+                <p class="lead text-body-secondary">Découvrez nos tacos.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            {% set images = [
+                { 'url': '', 'nom': 'Tacos M' },
+                { 'url': '', 'nom': 'TAcos L' },
+                { 'url': '', 'nom': 'Tacos XL' },
+                { 'url': '', 'nom': 'Le Klassic' },
+                { 'url': '', 'nom': 'Forceaoit' },
+            ] %}
+
+            {% for image in images %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="{{ image.url }}" class="card-img-top" alt="{{ image.nom }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ image.nom }}</h5>
+                            <p class="card-text">Description de l'image {{ loop.index }}.</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
+
