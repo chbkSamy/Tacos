@@ -2,6 +2,10 @@
 
 namespace App\Controller;
 
+use App\Repository\DrinkRepository;
+use App\Repository\SauceRepository;
+use App\Repository\TacosRepository;
+use App\Repository\ViandeRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -49,5 +53,31 @@ class DefaultController extends AbstractController
     public function dessert(): Response
     {
         return $this->render('galerie_5.html.twig');
+    }
+
+    #[Route('/viande', name: 'app_viande')]
+    public function showv(ViandeRepository $repository): Response
+    {
+        return $this->render('galerie_1.html.twig',['viandes'=> $repository ->findAll()]);
+    }
+    #[Route('/tacos', name: 'app_tacos')]
+    public function showt(TacosRepository$repository): Response
+    {
+        return $this->render('galerie_2.html.twig',['tacoss'=> $repository ->findAll()]);
+    }
+    #[Route('/sauce', name: 'app_sauce')]
+    public function shows(SauceRepository $repository): Response
+    {
+        return $this->render('galerie_3.html.twig',['sauces'=> $repository ->findAll()]);
+    }
+    #[Route('/boisson', name: 'app_boisson')]
+    public function showb(DrinkRepository $repository): Response
+    {
+        return $this->render('galerie_4.html.twig',['boissons'=> $repository ->findAll()]);
+    }
+    #[Route('/dessert', name: 'app_dessert')]
+    public function showd(TacosRepository $repository): Response
+    {
+        return $this->render('galerie_5.html.twig',['dessert'=> $repository ->findAll()]);
     }
 }

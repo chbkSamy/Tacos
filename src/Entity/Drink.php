@@ -20,6 +20,9 @@ class Drink
     #[ORM\Column(type: Types::TEXT)]
     private ?string $desrption = null;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $image = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -45,6 +48,18 @@ class Drink
     public function setDesrption(string $desrption): static
     {
         $this->desrption = $desrption;
+
+        return $this;
+    }
+
+    public function getImage(): ?string
+    {
+        return $this->image;
+    }
+
+    public function setImage(string $image): static
+    {
+        $this->image = $image;
 
         return $this;
     }

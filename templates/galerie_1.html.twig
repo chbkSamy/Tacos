@@ -7,27 +7,26 @@
                 <p class="lead text-body-secondary">Découvrez nos viandes.</p>
             </div>
         </div>
-
-        <div class="row">
-            {% set images = [
-                { 'url': 'https://imgs.search.brave.com/STaqudqgOVsB9tom-oXuergTMjsMitFmgx1rKroqb00/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL2lt/YWdlcy9nL3NBOEFB/T1N3TGNkaGhxeFYv/cy1sNTAwLmpwZw', 'nom': 'Anjoliveur', 'description': 'Anjoliver de Audi RS6 Sportback 8vf 2017, 350 000 km au compteur' },
-                { 'url': 'https://imgs.search.brave.com/NRQS6uSCJOrAHq2FQKJCNulqx2vp8K3d3jnp06zwArw/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWcu/Y3Vpc2luZWF6LmNv/bS82NjB4NjYwLzIw/MjMvMDMvMDgvaTE5/MTQ2Ny1kZXMtdHJh/bmNoZXMtZGUtY2Fj/aGlyLWF1LXBvdWxl/dC5qcGc', 'nom': 'Cachir', 'description': 'Cachir pur boeuf goût poulet en provenance directe du Maroc' },
-                { 'url': 'https://imgs.search.brave.com/ZvSx3DMzJ1aHWDC7Jcu42kiEgPLF5WymATEmHETryjY/rs:fit:860:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAyLzI3LzQyLzc2/LzM2MF9GXzIyNzQy/NzY3NV91cXFOdGhy/ZTVwa1F2MDFsRmc1/Sk80Z2N5bElnY3RO/TS5qcGc', 'nom': 'Sushi', 'description': 'Description pour Sushi' },
-                { 'url': 'https://imgs.search.brave.com/FSntJCCV1UOV6hL7xCHcCGVm12CEpYuoNbBKnhJtFhQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5zaHV0dGVyc3Rv/Y2suY29tL21vc2Fp/Y18yNTAvMTc5MzIx/MTg2Lzc1OTcwODAy/OC9zdG9jay1waG90/by1pbmRpYW4tcGFu/Z29saW4tYmFieS03/NTk3MDgwMjguanBn', 'nom': 'Pangolin', 'description': 'Description pour Pangolin' },
-                { 'url': 'https://www.boxing-shop.com/media/cache/default_product_large/media/porduits/1442413751.jpg', 'nom': 'Gant de boxe', 'description': 'Description pour Gant de boxe' }
-            ] %}
-
-            {% for image in images %}
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="{{ image.url }}" class="card-img-top" alt="{{ image.nom }}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ image.nom }}</h5>
-                            <p class="card-text">{{ image.description }}</p>
+        <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for viande in viandes %}
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src={{ viande.image}}  class="bd-placeholder-img card-img-top" width="100%" height="225">
+                    <div class="card-body">
+                        <p class="card-text">{{ viande.description}}</p>
+                        <div class="d-flex justify-content-between align-items-center">
+{#                            <div class="btn-group">#}
+{#                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>#}
+{#                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>#}
+{#                            </div>#}
+                            <h4 class="text-body-secondary ">{{ viande.name}}</h4>
                         </div>
                     </div>
                 </div>
-            {% endfor %}
+            </div>
+        {% endfor %}
         </div>
     </section>
 {% endblock %}
