@@ -12,7 +12,7 @@ class MeatController extends AbstractController
 //    #[Route('/viande', name: 'app_viande')]
 //    public function showViande(ManagerRegistry $mr): Response
 //    {
-//        $ids = [1, 2, 3, 4, 5]; // Remplacez ce tableau par les ID que vous souhaitez récupérer
+//        $ids = [1, 2, 3, 4, 5];
 //        $viandes = $mr->getRepository(Viande::class)->findBy(['id' => $ids]);
 //
 //        foreach ($viandes as $viande) {
