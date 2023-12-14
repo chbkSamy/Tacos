@@ -2,31 +2,45 @@
 
 {% block title %}Créer votre compte !{% endblock %}
 
-
 {% block body %}
     <div class="album">
         <div class="container mt-2 pt-5">
             <div class="row mb-5">
                 <div class="col-6 offset-3">
-                    <h1 class="mb-5">créer votre compte !</h1>
+                    <h1 class="mb-5">Créer votre compte !</h1>
 
                     {{ form_errors(registrationForm) }}
 
-                    {{ form_start(registrationForm) }}
-                    {{ form_row(registrationForm.name) }}
-                    {{ form_row(registrationForm.lastname) }}
-                    {{ form_row(registrationForm.email) }}
-                    {{ form_row(registrationForm.adress) }}
-                    {{ form_row(registrationForm.country) }}
-                    {{ form_row(registrationForm.state) }}
-                    {{ form_row(registrationForm.zip) }}
-                    {{ form_row(registrationForm.plainPassword, {
-                        label: 'Password'
-                    }) }}
+                    {{ form_start(registrationForm, {'attr': {'class': 'needs-validation'}}) }}
+                    <div class="mb-3">
+                        {{ form_row(registrationForm.name, {'attr': {'class': 'form-control', 'placeholder': 'Nom'}}) }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form_row(registrationForm.lastname, {'attr': {'class': 'form-control', 'placeholder': 'Prénom'}}) }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form_row(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'Email'}}) }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form_row(registrationForm.adress, {'attr': {'class': 'form-control', 'placeholder': 'Adresse'}}) }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form_row(registrationForm.country, {'attr': {'class': 'form-control', 'placeholder': 'Pays'}}) }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form_row(registrationForm.state, {'attr': {'class': 'form-control', 'placeholder': 'Département'}}) }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form_row(registrationForm.zip, {'attr': {'class': 'form-control', 'placeholder': 'Code postal'}}) }}
+                    </div>
+                    <div class="mb-3">
+                        {{ form_row(registrationForm.plainPassword, {'attr': {'class': 'form-control', 'placeholder': 'Mot de passe'}}) }}
+                    </div>
+                    <div class="mb-3 form-check">
+                        {{ form_row(registrationForm.agreeTerms, {'label_attr': {'class': 'form-check-label'}, 'attr': {'class': 'form-check-input'}}) }}
 
-                    {{ form_row(registrationForm.agreeTerms) }}
-
-                    <button type="submit" class="btn btn-sm btn-dark">S'inscrire</button>
+                    </div>
+                    <button type="submit" class="btn btn-dark">S'inscrire</button>
                     {{ form_end(registrationForm) }}
                 </div>
             </div>

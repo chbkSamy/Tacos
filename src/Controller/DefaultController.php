@@ -17,18 +17,19 @@ class DefaultController extends AbstractController
     #[Route('/', name: 'app_default')]
     public function index(): Response
     {
-        return $this->render('index.html.twig', ['name' => 'tata']);
+        return $this->render('index.html.twig');
     }
 
-    #[Route('/contact', name: 'app_contact')]
+    #[Route('/register', name: 'app_register')]
     public function contact(): Response
     {
-        return $this->render('register.html.twig');
+        return $this->render('registration/register.html.twig');
     }
-    #[Route('/connecter', name: 'app_connecter')]
-    public function connecter(): Response
+
+    #[Route('/login', name: 'app_login')]
+    public function login(): Response
     {
-        return $this->render('connecter.html.twig');
+        return $this->render('security/login.html.twig');
     }
 
     #[Route('/viande', name: 'app_viande')]
