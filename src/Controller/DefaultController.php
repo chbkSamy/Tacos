@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Dessert;
+use App\Repository\DessertRepository;
 use App\Repository\DrinkRepository;
 use App\Repository\SauceRepository;
 use App\Repository\TacosRepository;
