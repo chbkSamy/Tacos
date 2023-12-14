@@ -18,7 +18,7 @@ class Drink
     private ?string $name = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $desrption = null;
+    private ?string $description = null;
 
     #[ORM\Column(type: Types::TEXT)]
     private ?string $image = null;
@@ -40,14 +40,14 @@ class Drink
         return $this;
     }
 
-    public function getDesrption(): ?string
+    public function getDescription(): ?string
     {
-        return $this->desrption;
+        return $this->description;
     }
 
-    public function setDesrption(string $desrption): static
+    public function setDescription(string $description): static
     {
-        $this->desrption = $desrption;
+        $this->description = $description;
 
         return $this;
     }

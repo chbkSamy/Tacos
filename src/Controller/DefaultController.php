@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Dessert;
 use App\Repository\DrinkRepository;
 use App\Repository\SauceRepository;
 use App\Repository\TacosRepository;
@@ -21,7 +22,7 @@ class DefaultController extends AbstractController
     #[Route('/contact', name: 'app_contact')]
     public function contact(): Response
     {
-        return $this->render('contact.html.twig');
+        return $this->render('register.html.twig');
     }
     #[Route('/connecter', name: 'app_connecter')]
     public function connecter(): Response
@@ -35,6 +36,7 @@ class DefaultController extends AbstractController
         return $this->render('galerie_1.html.twig');
     }
     #[Route('/Tacos', name: 'app_tacos')]
+
     public function tacos(): Response
     {
         return $this->render('galerie_2.html.twig');
@@ -61,7 +63,7 @@ class DefaultController extends AbstractController
         return $this->render('galerie_1.html.twig',['viandes'=> $repository ->findAll()]);
     }
     #[Route('/tacos', name: 'app_tacos')]
-    public function showt(TacosRepository$repository): Response
+    public function showt(TacosRepository $repository): Response
     {
         return $this->render('galerie_2.html.twig',['tacoss'=> $repository ->findAll()]);
     }
@@ -76,8 +78,8 @@ class DefaultController extends AbstractController
         return $this->render('galerie_4.html.twig',['boissons'=> $repository ->findAll()]);
     }
     #[Route('/dessert', name: 'app_dessert')]
-    public function showd(TacosRepository $repository): Response
+    public function showd(DessertRepository $repository): Response
     {
-        return $this->render('galerie_5.html.twig',['dessert'=> $repository ->findAll()]);
+        return $this->render('galerie_5.html.twig',['desserts'=> $repository ->findAll()]);
     }
 }
